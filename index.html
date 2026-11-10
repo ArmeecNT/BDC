@@ -240,7 +240,7 @@ function cycleCount(m=model){return foldSequence(m).length;}
 function activeOperation(value=progress,m=model){return foldSequence(m)[Math.min(cycleCount(m)-1,Math.max(0,Math.floor(value)))];}
 function foldAnglesAt(p){
  const out=emptyFoldAngles(model);if(model.runMode==='feed')return out;
- foldSequence().forEach((op,k)=>{out[op.side][op.fold]=foldAngle(model.sides[op.side][op.fold])*clamp((p-k-.32)/.53,0,1);});return out;
+ foldSequence().forEach((op,k)=>{out[op.side][op.fold]=foldAngle(model.sides[op.side][op.fold])*bendProgress(p-k);});return out;
 }
 function anglesAt(p){return foldAnglesAt(p).map(side=>side[0]);}
 function activeAt(p){return activeOperation(p).side;}
@@ -366,6 +366,8 @@ function cycleProgram(m){
 
 const directionDegrees=[0,180,270,90];
 const smooth=x=>{const t=clamp(x,0,1);return t*t*(3-2*t);};
+// Gentle acceleration/deceleration for the bend itself, shared by sheet and knife.
+function bendProgress(p){const t=clamp((p-.32)/.53,0,1);return t*t*t*(t*(t*6-15)+10);}
 
 function clampGap(m,value){
  const p=value>=cycleCount(m)?1:value%1,open=handlingSetup(m).openHeight;if(m.runMode==='feed')return open;
@@ -437,7 +439,7 @@ function bendContact(m,sideIndex,angle,fold=0){
  return {kind,angle:u,bendCenter,center,sheetPoint,knifePoint,radius,outsideRadius:outside,knifeRadius:knife.radius,limitReached:angle>Math.PI/2+1e-8};
 }
 function benderGeometry(m,value){
- const op=activeOperation(value,m),active=op.side,p=value>=cycleCount(m)?1:value%1,side=m.sides[active][op.fold],angle=(180-side.a)*Math.PI/180*clamp((p-.32)/.53,0,1),sign=side.sign;
+ const op=activeOperation(value,m),active=op.side,p=value>=cycleCount(m)?1:value%1,side=m.sides[active][op.fold],angle=(180-side.a)*Math.PI/180*bendProgress(p),sign=side.sign;
  const trajectory=bendContact(m,active,angle,op.fold),knifePoint=trajectory.knifePoint,workingY=trajectory.sheetPoint[0]-knifePoint[0],workingZ=trajectory.sheetPoint[1]-knifePoint[1];
  const start=bendContact(m,active,0,op.fold),startY=start.sheetPoint[0]-start.knifePoint[0],startZ=start.sheetPoint[1]-start.knifePoint[1];
  const approach=smooth((p-.2)/.12),release=1-smooth((p-.85)/.1),factor=value>=cycleCount(m)||m.runMode==='feed'||side.a>=180?0:p<.32?approach:p>.85?release:1;
