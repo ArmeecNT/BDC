@@ -54,7 +54,7 @@ input,select{font-size:16px}button{min-height:42px}.view-head{flex-wrap:wrap}.pr
 <div class="panel"><details><summary>Что проверяется и где остаются ограничения</summary><p>Поддерживаются цепочки до 8 гибов на каждом борту, включая разнонаправленные и возвратные полки. Нумерация и выполнение идут от края к дну: сначала гиб №1, затем №2 и далее. Локальные частичные гибы, обжим кромки, отверстия и произвольные угловые вырезы пока не моделируются.</p><ul><li>Толщина: 0,35–2 мм для стали, до 1,5 мм для нержавеющей стали 304, до 2,5 мм для алюминия.</li><li>Сначала гнутся две короткие стороны, затем две длинные. По вашему уточнению используется стандартная прижимная секция из правого варианта инструмента. Один профиль применяется к средним и обеим крайним секциям; сборка не меняется внутри цикла. Верхняя рабочая кромка стола повторяет зеркальное сечение носика обычного прижима. Ниже неё корпус прямой, без крепёжных вырезов инструмента, с плоским основанием; стол — единое тело по всей рабочей длине; стыки прижимных секций на стол не переносятся. Рабочая поверхность стола не выходит за линию гиба. Ширины отдельных секций в 3D показаны условно. Рабочая длина инструмента задана по длинной стороне с торцевыми зазорами и не меняется внутри цикла. Внутренний наклон коротких стенок сужает доступный проём. Если безопасный инструмент не покрывает длинный борт, проверка выдаёт препятствие.</li><li>Длина каждого гиба и габарит развёртки проверяются отдельно. Для прямоугольного габарита допускается разворот на 90°.</li><li>Проверка взаимного пересечения прямых бортов использует объёмные параллелепипеды с реальной толщиной и выборку движения через 1°. Проверяются также дно и показанные профили прижима/стола во время гибки. Зоны радиуса, угловые вырезы, гибочная рама, захват, подача и поворот не охвачены полной проверкой.</li><li>Отрицательные гибы видны в симуляции, но для них нельзя подтвердить доступность манипулятора; глубина вниз и пересечения прямых полок с моделью стола проверяются.</li><li>Углы 180° и близкие к плоскому состоянию показываются геометрически; допустимый диапазон реального BDC не подтверждён.</li><li>По заданному правилу Rнар = t, Rвн = Rнар − t = 0. Скругление ножей R2 мм задано независимо от толщины. K рассчитывается автоматически по средней линии геометрической модели: K = 0,5. Это геометрическое допущение, не экспериментальная поправка материала. Развёртка рассчитана по BA = β × π / 180 × (R + K × t). Перед производством припуски нужно откалибровать по пробным деталям; пружинение не рассчитывается.</li><li>Дуговая траектория — учебное движение общей жёсткой рамы в горизонтальной и вертикальной координатах сцены Y/Z. Координаты контроллера X/Y не приравнены к осям сцены. Контакт расположен непосредственно на наружном скруглении детали. Центр рабочей кромки ножа идёт по окружности Rдвиж = Rнаруж детали + Rножа; прежний условный рычаг 22 мм убран. Длина прямой полки не увеличивает эту дугу. Круглая рабочая кромка на схеме занимает 90°; дальнейшее взаимодействие при острых внутренних углах не подтверждено. Для технологической проверки требуется реальная траектория и профили ножей.</li><li>Время анимации условное. Показатель производителя 0,2 с/гиб не используется как время изготовления детали.</li></ul><p>Архив «Архив WinRAR (2).rar»: инструкция с обложкой BDC2500 и пакет SL300-PCx_V240504L13-SF. Использованы соглашения направлений, знаковые углы, отдельные операции поворота/подачи, дуговое движение ножей, обход и самопроверка. Заводские числа из SYS не приняты за параметры BDC3200. Перехват без размеров не анимируется. Прижим: PDF «方案 刀具示意图-1.pdf», схема секционной сборки, и ваши уточнения о стандартном профиле секций. Word «Спец.docx»: боковое сечение гибочной рамы и отдельный профиль обычного прижима, подтверждённый вами. Прямоугольная накладка слева с размером 80 мм и круглым отверстием — отдельная деталь; она исключена из основного контура и не моделируется как часть обычного прижима. Прижим восстановлен по изображению с опорными размерами 40 и 114 мм. Весь профиль повёрнут на 90° в вертикальное положение, корпус и крепление стоят над рабочей кромкой; детали без размеров приближённые. Гибочная рама ориентирована в рабочее положение и переносится без вращения как единое тело с двумя ножами; режим траектории выбирается отдельно. Полный осевой ход не указан. Автоматический отвод, поворот и подача детали показаны схематично; камера сохраняет выбранный вид, а инструмент остаётся у одной линии гиба. Профиль станка: загруженная презентация «комерческое панелегиб.pptx», каталог SENFENG (июль 2024). Данные другой версии: <a href="https://www.senfenglaser.com/product/press-down-arm-panel-bender-machine/" target="_blank" rel="noopener">SENFENG BDC</a>. Метод расчёта припуска: <a href="https://help.solidworks.com/2022/English/SolidWorks/sldworks/c_K_Factor.htm" target="_blank" rel="noopener">SOLIDWORKS</a>.</p></details></div>
 </div>
 <div id="tabMachine" class="tab-page hidden">
-<div class="panel"><div class="view-head"><h2>Станок и оси</h2><div class="toolbar"><button id="machineIso" type="button">3D · общий вид</button><button id="machineFront" type="button">Спереди</button><button id="machineSide" type="button">Сбоку</button><button id="machineTop" type="button">Сверху</button></div></div><div class="machine-subtitle">Объёмная концептуальная модель узлов и 16 осей построена по паспорту BDC3200 (комплектация 3 мм); неизвестные размеры и точные ходовые законы пока условные. Это рабочий черновик для последующей корректировки параметров.</div><div class="machine-layout"><div class="panel"><canvas id="machineView" aria-label="Объёмная трёхмерная модель BDC3200 с вращением и осями"></canvas><div class="hint" id="machineOrbit">Мышь / палец — вращение · колесо / два пальца — масштаб · ракурсы сверху.</div><div class="progress-row"><button id="machinePlay" type="button" class="primary">▶ Пуск</button><input id="machineTimeline" type="range" min="0" max="4" step="0.01" value="0" aria-label="Этап цикла станка"></div><div class="legend machine-legend"><span><i class="dot" style="background:#ff8a38"></i>Активная группа осей</span><span><i class="dot" style="background:#6e7f91"></i>Ожидание</span><span><i class="dot" style="background:#e5bf62"></i>Гипотетическая связь</span></div><div id="machineState" class="hint"></div></div><div><div class="panel"><h2>Сводка текущего шага</h2><div class="mini-grid"><div class="mini-card"><b id="machineAction">—</b><span>Текущее действие</span></div><div class="mini-card"><b id="machineSideFold">—</b><span>Активный борт / гиб</span></div><div class="mini-card"><b id="machineFeed">0 мм</b><span>Подача U</span></div><div class="mini-card"><b id="machineTurn">0°</b><span>Поворот C / C2</span></div></div><div class="machine-note" style="margin-top:10px">Значения осей ниже — модельные. Они нужны, чтобы визуально разложить цикл по исполнительным группам и уточнять их вместе с тобой.</div></div><div class="panel"><h2>Оси</h2><div class="row-scroll"><table id="axisTable"><thead><tr><th>Ось</th><th>Группа</th><th>Роль</th><th>Состояние</th><th>Модельное значение</th><th>Комментарий</th></tr></thead><tbody id="axisTableBody"></tbody></table></div></div></div></div><div class="panel"><h2>Что уже считаем известным</h2><ul><li>Группы осей: D/D2/U3 — позиционирование; U — подача; C/C2 — поворот; H3 — зажим; Z1/Z2/Z3 — прижим; X1/X2/X3 — уступание / отвод; Y1/Y2/Y3 — гибочное движение.</li><li>Вкладка «Станок» не заменяет 3D-гибку, а дополняет её отдельной кинематической схемой.</li><li>По мере уточнения параметров можно будет поочерёдно задавать диапазоны хода, знаки движения, скорость и взаимную синхронизацию групп.</li></ul></div>
+<div class="panel"><div class="view-head"><h2>Станок и оси</h2><div class="toolbar"><button id="machineIso" type="button">3D · общий вид</button><button id="machineFront" type="button">Спереди</button><button id="machineSide" type="button">Сбоку</button><button id="machineTop" type="button">Сверху</button></div></div><div class="machine-subtitle">3D-модель компоновки выполнена по изображениям SENFENG BDC3200 из каталога (стр. 1, 3 и 15). Корпус, проём, прижим, передняя рабочая зона и правый пульт соответствуют внешней компоновке. Размеры внутренних механизмов и кинематика осей — предварительные.</div><div class="machine-layout"><div class="panel"><canvas id="machineView" aria-label="Объёмная трёхмерная модель BDC3200 с вращением и осями"></canvas><div class="hint" id="machineOrbit">Мышь / палец — вращение · колесо — масштаб. <label style="display:inline-flex;align-items:center;margin-left:12px"><input id="machineShowAxes" type="checkbox" style="width:auto;margin:0 6px 0 0">Показывать оси</label></div><div class="progress-row"><button id="machinePlay" type="button" class="primary">▶ Пуск</button><input id="machineTimeline" type="range" min="0" max="4" step="0.01" value="0" aria-label="Этап цикла станка"></div><div class="legend machine-legend"><span><i class="dot" style="background:#ff8a38"></i>Активная группа осей</span><span><i class="dot" style="background:#6e7f91"></i>Ожидание</span><span><i class="dot" style="background:#e5bf62"></i>Гипотетическая связь</span></div><div id="machineState" class="hint"></div></div><div><div class="panel"><h2>Сводка текущего шага</h2><div class="mini-grid"><div class="mini-card"><b id="machineAction">—</b><span>Текущее действие</span></div><div class="mini-card"><b id="machineSideFold">—</b><span>Активный борт / гиб</span></div><div class="mini-card"><b id="machineFeed">0 мм</b><span>Подача U</span></div><div class="mini-card"><b id="machineTurn">0°</b><span>Поворот C / C2</span></div></div><div class="machine-note" style="margin-top:10px">Значения осей ниже — модельные. Они нужны, чтобы визуально разложить цикл по исполнительным группам и уточнять их вместе с тобой.</div></div><div class="panel"><h2>Оси</h2><div class="row-scroll"><table id="axisTable"><thead><tr><th>Ось</th><th>Группа</th><th>Роль</th><th>Состояние</th><th>Модельное значение</th><th>Комментарий</th></tr></thead><tbody id="axisTableBody"></tbody></table></div></div></div></div><div class="panel"><h2>Что уже считаем известным</h2><ul><li>Группы осей: D/D2/U3 — позиционирование; U — подача; C/C2 — поворот; H3 — зажим; Z1/Z2/Z3 — прижим; X1/X2/X3 — уступание / отвод; Y1/Y2/Y3 — гибочное движение.</li><li>Вкладка «Станок» не заменяет 3D-гибку, а дополняет её отдельной кинематической схемой.</li><li>По мере уточнения параметров можно будет поочерёдно задавать диапазоны хода, знаки движения, скорость и взаимную синхронизацию групп.</li></ul></div>
 </div>
 <div class="foot">BDC3200 · автономный исследовательский прототип · проверка геометрии не подтверждает изготовление детали на реальном станке.</div>
 </section></main><div id="printReport"></div>
@@ -62,7 +62,7 @@ input,select{font-size:16px}button{min-height:42px}.view-head{flex-wrap:wrap}.pr
 'use strict';
 const $=id=>document.getElementById(id), names=['А','Б','В','Г'], limits={steel:2,inox:1.5,aluminum:2.5};
 const defs={length:800,width:500,blankLength:1000,blankWidth:700,thickness:1,radius:0,kfactor:.5,gap:4,material:'steel',toolLength:796,toolClearance:2,maxWidth:1250,maxHeight:200,safetyMargin:20,turnDistance:900,openHeight:150,feedLimit:0,clampLimit:0,frameHorizontalLimit:0,frameVerticalLimit:0,runMode:'bend',knifePath:'arc',avoidance:'auto',order:'2,3,0,1',sides:[[{h:100,a:90,sign:1}],[{h:100,a:90,sign:1}],[{h:100,a:90,sign:1}],[{h:100,a:90,sign:1}]]};
-let model=structuredClone(defs), progress=0,playing=false,last=0,yaw=Math.PI-.62,pitch=.65,zoom=1,orientation=[0,0,0,1],panX=0,panY=0,viewMode='rotate',drag=null,dirty=true,lastReport=null,valid=true,playStop=4,programRows=[],programIssues=[],programHighlight=-1,activeMainTab='sim',machineViewMode='iso',machineYaw=-.77,machinePitch=.34,machineZoom=1,machineDrag=null;
+let model=structuredClone(defs), progress=0,playing=false,last=0,yaw=Math.PI-.62,pitch=.65,zoom=1,orientation=[0,0,0,1],panX=0,panY=0,viewMode='rotate',drag=null,dirty=true,lastReport=null,valid=true,playStop=4,programRows=[],programIssues=[],programHighlight=-1,activeMainTab='sim',machineViewMode='iso',machineYaw=-.64,machinePitch=.44,machineZoom=1,machineDrag=null;
 const ranges={blankLength:[10,5000],blankWidth:[10,5000],thickness:[.1,10],gap:[0,100],toolClearance:[0,100],safetyMargin:[1,200],turnDistance:[0,10000],openHeight:[0,2000],feedLimit:[0,10000],clampLimit:[0,2000],frameHorizontalLimit:[0,2000],frameVerticalLimit:[0,2000]};
 function finite(x,min,max){return Number.isFinite(x)&&x>=min&&x<=max}
 function inputNumber(id){const raw=$(id).value.trim();return raw===''?NaN:Number(raw);}
@@ -131,7 +131,7 @@ function drawArrow(ctx,x1,y1,x2,y2,color,label,active=false,curved=false){
 // Independent orbit camera for the machine tab; scene dimensions are illustrative units.
 function machineCamSet(view){
  machineViewMode=view;
- const angles={iso:[-.77,.34],front:[0,.12],side:[-Math.PI/2,.09],top:[-.55,1.34]};
+ const angles={iso:[-.64,.44],front:[0,.12],side:[-Math.PI/2,.14],top:[-.55,1.35]};
  [machineYaw,machinePitch]=angles[view]||angles.iso;
  drawMachineSchema();
 }
@@ -141,70 +141,122 @@ function drawMachineSchema(){
  const dpr=Math.min(2,window.devicePixelRatio||1);
  if(cvs.width!==Math.round(w*dpr)||cvs.height!==Math.round(h*dpr)){cvs.width=Math.round(w*dpr);cvs.height=Math.round(h*dpr);}
  const ctx=cvs.getContext('2d');ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,w,h);
- const gradient=ctx.createLinearGradient(0,0,0,h);gradient.addColorStop(0,'#1b2a3c');gradient.addColorStop(1,'#0e1520');ctx.fillStyle=gradient;ctx.fillRect(0,0,w,h);
- const axisData=axisMetaRows(),activeAxes=new Set(axisData.data.filter(x=>x[3]==='Активна').map(x=>x[0]));
- const yaw=machineYaw,pitch=machinePitch,scale=Math.min(w/8.3,h/5.5)*machineZoom,origin=[w*.48,h*.55];
+ const gradient=ctx.createLinearGradient(0,0,0,h);gradient.addColorStop(0,'#1b2a3c');gradient.addColorStop(1,'#101721');ctx.fillStyle=gradient;ctx.fillRect(0,0,w,h);
+ const data=axisMetaRows(),activeAxes=new Set(data.data.filter(x=>x[3]==='Активна').map(x=>x[0]));
+ const yaw=machineYaw,pitch=machinePitch,scale=Math.min(w/10.9,h/6.25)*machineZoom,origin=[w*.465,h*.57];
  const project=([x,y,z])=>{
   const xx=x*Math.cos(yaw)-y*Math.sin(yaw),yy=x*Math.sin(yaw)+y*Math.cos(yaw);
   return [origin[0]+xx*scale,origin[1]+(yy*Math.sin(pitch)-z*Math.cos(pitch))*scale,yy*Math.cos(pitch)+z*Math.sin(pitch)];
  };
- const faces=[];
- const cube=(center,dim,top,side)=>{
-  const [x,y,z]=center,[dx,dy,dz]=dim;const v=[];
-  for(const k of [-1,1])for(const j of [-1,1])for(const i of [-1,1])v.push(project([x+i*dx/2,y+j*dy/2,z+k*dz/2]));
-  for(const [ids,color] of [[[0,2,3,1],side],[[4,5,7,6],top],[[0,1,5,4],side],[[2,6,7,3],side],[[0,4,6,2],side],[[1,3,7,5],side]]){
-   const points=ids.map(i=>v[i]);faces.push({points,color,depth:points.reduce((a,p)=>a+p[2],0)/points.length});
+ const faces=[],overlays=[];
+ const face=(points,color,stroke='#172330')=>{
+  const q=points.map(project);faces.push({points:q,color,stroke,depth:q.reduce((a,p)=>a+p[2],0)/q.length});
+ };
+ const cube=(center,dim,front,side,top=front)=>{
+  const [x,y,z]=center,[dx,dy,dz]=dim,verts=[];
+  for(const k of [-1,1])for(const j of [-1,1])for(const i of [-1,1])verts.push([x+i*dx/2,y+j*dy/2,z+k*dz/2]);
+  for(const [ids,color] of [[[0,2,3,1],side],[[4,5,7,6],top],[[0,1,5,4],front],[[2,6,7,3],side],[[0,4,6,2],side],[[1,3,7,5],side]])face(ids.map(i=>verts[i]),color);
+ };
+ const beam=(x1,x2,y1,y2,z1,z2,front,side,top)=>cube([(x1+x2)/2,(y1+y2)/2,(z1+z2)/2],[x2-x1,y2-y1,z2-z1],front,side,top);
+ const extrudeYZ=(x1,x2,profile,front,side)=>{
+  face(profile.map(([y,z])=>[x1,y,z]),side);
+  face([...profile].reverse().map(([y,z])=>[x2,y,z]),side);
+  for(let i=0;i<profile.length;i++){
+   const a=profile[i],b=profile[(i+1)%profile.length];face([[x1,...a],[x2,...a],[x2,...b],[x1,...b]],front);
   }
  };
- const line=(p,q,color,width=2)=>{const a=project(p),b=project(q);ctx.beginPath();ctx.moveTo(a[0],a[1]);ctx.lineTo(b[0],b[1]);ctx.strokeStyle=color;ctx.lineWidth=width;ctx.stroke();};
- const board=(label,p,color)=>{const q=project(p);ctx.font='600 11px system-ui';const tw=ctx.measureText(label).width;const x=Math.max(5,Math.min(w-tw-15,q[0]+5)),y=Math.max(20,Math.min(h-10,q[1]-5));ctx.fillStyle='#0e1722df';ctx.fillRect(x-3,y-13,tw+8,18);ctx.strokeStyle=color;ctx.strokeRect(x-3,y-13,tw+8,18);ctx.fillStyle=color;ctx.fillText(label,x,y);};
- const arrow=(p,q,id)=>{
-  const a=project(p),b=project(q),active=activeAxes.has(id),color=active?'#ff9c4a':'#e0bd6d';
-  ctx.strokeStyle=color;ctx.fillStyle=color;ctx.lineWidth=active?2.9:1.7;ctx.beginPath();ctx.moveTo(a[0],a[1]);ctx.lineTo(b[0],b[1]);ctx.stroke();
-  const t=Math.atan2(b[1]-a[1],b[0]-a[0]);ctx.beginPath();ctx.moveTo(b[0],b[1]);ctx.lineTo(b[0]-9*Math.cos(t-.4),b[1]-9*Math.sin(t-.4));ctx.lineTo(b[0]-9*Math.cos(t+.4),b[1]-9*Math.sin(t+.4));ctx.closePath();ctx.fill();board(id,q,color);
+ const poly=(points,color)=>face(points,color,'#182535');
+ const addLine=(p,q,color='#9cabb9',width=1.2)=>overlays.push({kind:'line',p,q,color,width});
+ const label=(text,p,color='#f5f7fa',size=12)=>overlays.push({kind:'label',text,p,color,size});
+ // External architecture: continuous tall white enclosure, broad upper cabinet,
+ // horizontal working opening, compact front apron and separate control console.
+ // The proportions and uncovered back surfaces are approximations from catalogue photos.
+ beam(-3.15,3.0,.25,1.20,-.90,2.38,'#dce4e9','#93a7b3','#f5f6f6');  // enclosed rear housing
+ beam(-3.28,-2.99,-.92,1.22,-.87,2.38,'#f4f6f6','#9eafba','#ffffff'); // left vertical frame
+ beam(2.86,3.08,-.57,1.20,-.88,2.32,'#e8edf0','#8fa6b4','#ffffff'); // right frame
+ beam(-3.04,2.98,-.79,.80,1.25,2.40,'#ecf1f3','#a0b4c1','#ffffff'); // upper wide enclosure
+ beam(-2.89,2.71,-.83,-.59,.30,1.27,'#202a32','#253341','#3b4953'); // dark workspace cavity
+ beam(-2.85,2.65,-.99,-.79,.90,1.25,'#2b333b','#1e2933','#455460'); // upper rib
+ beam(-2.85,2.65,-.95,-.77,.40,.68,'#303a44','#1e2b35','#425361'); // lower clamp rail
+ // Vent slots in the tool-row: dark repeating rectangular openings.
+ for(let i=0;i<29;i++){
+  const x=-2.72+i*.185;
+  beam(x,x+.062,-1.011,-.976,.47,.63,'#101a23','#131f27','#15212a');
+ }
+ // White lower front shroud and a dark table bed with rows of fasteners.
+ beam(-3.08,2.86,-1.16,-.70,-.91,-.36,'#e7ecef','#a4b5bf','#f4f6f8');
+ beam(-2.86,2.86,-1.49,-.62,-.40,-.27,'#374653','#253744','#657784');
+ beam(-2.80,2.74,-1.31,-.80,-.265,-.232,'#9eaeb8','#687b89','#c5d0d8');
+ for(let i=0;i<19;i++){
+  const x=-2.66+i*.294;
+  cube([x,-1.14,-.211],[.068,.068,.024],'#d6dde0','#687d88','#edf2f3');
+ }
+ // One continuous fixed table and the segmented standard clamp inside the opening.
+ beam(-2.72,2.67,-.77,-.55,-.19,-.10,'#6f8290','#526b7b','#a9b8c2');
+ const lift=Math.min(.23,Math.max(0,data.gap/420));
+ beam(-2.72,2.67,-.86,-.66,.57+lift,.77+lift,'#475666','#394c5a','#617382');
+ for(let i=0;i<27;i++){
+  const x=-2.65+i*.195;
+  beam(x,x+.174,-.91,-.66,.40+lift,.60+lift,'#657480','#435462','#84939c');
+ }
+ // The C-shaped clamping / handling arm visible on the right in the original photo.
+ // This is a polygonal cross-section so the open jaw is recognizable from 3D views.
+ extrudeYZ(1.50,2.19,[[-.70,1.81],[-1.13,1.81],[-1.37,1.65],[-1.53,1.27],[-1.55,.19],[-1.42,-.10],[-1.05,-.15],[-1.02,.13],[-1.23,.19],[-1.23,1.24],[-1.09,1.44],[-.70,1.44]],'#d3dbdf','#96a9b6');
+ beam(1.44,2.22,-.76,-.39,1.59,1.91,'#e7edef','#91a5b3','#fff');
+ // A narrow amber highlight is used only for active bending-tool travel.
+ const dy=Math.max(-.12,Math.min(.12,data.bendX/80)),dz=Math.max(-.10,Math.min(.10,data.bendY/80));
+ beam(-2.68,2.62,-.87+dy,-.76+dy,.26+dz,.305+dz,'#a9753e','#7b5634','#f0b66c');
+ // Feeding/positioning platform in front of the cabinet, with thin stock sheet.
+ beam(.30,2.50,-2.56,-1.33,-.39,-.29,'#9aaab6','#526879','#d1dbe2');
+ beam(.36,2.46,-2.48,-1.39,-.272,-.249,'#b5c8d4','#76919f','#d9e5eb');
+ const sh=Math.max(-.18,Math.min(.18,data.feed/2000));
+ beam(.47,2.24,-2.42+sh,-1.54+sh,-.230,-.204,'#c7d7df','#8199a8','#e2ebf0');
+ // Right front control pedestal and its freestanding raised touch-screen.
+ beam(2.70,4.14,-1.68,-.30,-.94,-.21,'#e6ecef','#9bafbd','#f4f7f8');
+ beam(2.70,3.59,-1.695,-1.645,-.91,-.24,'#143a4b','#0c2c3b','#1f5367');
+ beam(3.83,3.91,-.91,-.82,-.19,.59,'#b5c4cb','#788d9a','#cfdde2');
+ beam(3.60,4.09,-1.15,-.83,.43,.77,'#dce5e9','#899eac','#f3f6f7');
+ beam(3.65,4.05,-1.178,-1.15,.49,.71,'#17334a','#0e1c2a','#385e7a');
+ // Three tall light service covers on top.
+ for(const x of [-1.65,-.10,1.45])beam(x,x+.40,.67,1.03,2.39,3.06,'#e9eef0','#9aabb5','#f8fafb');
+ // Small dark left side glass inspection strip and OEM logo as overlay on front shell.
+ beam(-3.19,-3.09,-.91,-.69,-.47,2.13,'#132c3c','#0a2636','#19475b');
+ // Base feet under the station.
+ for(const x of [-2.9,-1.0,1.2,2.8,3.95])beam(x-.16,x+.16,-1.26,-.75,-1.02,-.91,'#111a20','#0e1219','#334653');
+ faces.sort((a,b)=>b.depth-a.depth);
+ for(const f of faces){ctx.fillStyle=f.color;ctx.beginPath();ctx.moveTo(f.points[0][0],f.points[0][1]);for(const v of f.points.slice(1))ctx.lineTo(v[0],v[1]);ctx.closePath();ctx.fill();if(f.stroke){ctx.strokeStyle=f.stroke;ctx.lineWidth=.6;ctx.stroke();}}
+ // Branding and panel graphics follow the real catalogue in placement and palette.
+ // Kept as screen-space labels, rather than falsely treating a photo as editable CAD.
+ const stamp=(text,pos,color,font='bold 12px system-ui')=>{
+  const q=project(pos);ctx.fillStyle=color;ctx.font=font;ctx.fillText(text,q[0],q[1]);
  };
- // Fixed body, two C-frames, bed, moving press, tools, feed table and blank.
- cube([0,0,-.98],[6.3,2.75,.38],'#3c566b','#273c50');
- cube([-2.75,.45,.48],[.7,1.45,2.9],'#5d7890','#344d63');
- cube([2.75,.45,.48],[.7,1.45,2.9],'#5d7890','#344d63');
- cube([0,.52,1.82],[5.95,.9,.55],'#617b91','#3b5369');
- cube([0,-.32,-.30],[5.6,1.1,.48],'#55758e','#34546b');
- cube([0,1.5,-.44],[4.8,2.0,.20],'#334d60','#243746');
- // Segmented upper clamp; actual section widths are not yet confirmed.
- const clampGapPx=Math.min(.48,axisData.gap/180),pressZ=.65+clampGapPx;
- cube([0,-.25,pressZ+.42],[5.5,.35,.42],'#8ca3b6','#526c82');
- for(let i=0;i<15;i++)cube([-2.45+i*.35,-.30,pressZ],[.32,.26,.48],'#a6bac9','#607c91');
- cube([0,-.54,-.02],[5.7,.43,.15],'#829baa','#435f75');
- // Common bending carriage, up/down tool represented by thin contrasting noses.
- const xShift=Math.max(-.27,Math.min(.27,axisData.bendX/20)),yShift=Math.max(-.35,Math.min(.35,axisData.bendY/20));
- cube([0,-1.18+xShift,-.17+yShift],[5.55,.62,.43],'#436a87','#2c4e67');
- cube([0,-.86+xShift,.08+yShift],[5.4,.13,.12],'#e7a85c','#ac743e');
- cube([0,-.86+xShift,-.42+yShift],[5.4,.13,.12],'#e7a85c','#ac743e');
- // Sheet: motion of feed and rotation shown schematically (not servo positions).
- const sheetShift=Math.max(-.5,Math.min(.5,(axisData.feed||0)/1200));
- cube([0,1.15+sheetShift,.02],[4.1,2.65,.045],'#bed6e2','#7294a9');
- // Positioning carriage and rotation hub.
- cube([0,2.65,.13],[.75,.62,.32],'#6b8b9f','#3c637c');
- cube([0,2.75,.43],[.3,.3,.37],'#efa451','#ad6f2d');
- faces.sort((a,b)=>a.depth-b.depth);
- for(const f of faces){ctx.fillStyle=f.color;ctx.beginPath();ctx.moveTo(f.points[0][0],f.points[0][1]);for(const p of f.points.slice(1))ctx.lineTo(p[0],p[1]);ctx.closePath();ctx.fill();ctx.strokeStyle='#0b18286b';ctx.lineWidth=.7;ctx.stroke();}
- // Reference axes shown in the model coordinates, deliberately distinct from machine servo axes.
- line([-3.2,-1.8,-.9],[3.2,-1.8,-.9],'#52758b',1);
- for(let i=-3;i<=3;i++)line([i,-1.8,-.9],[i,-1.8,-.84],'#52758b',1);
- const axisArrows=[
-  ['D',[-2.0,2.7,.4],[-2.0,3.15,.4]],['D2',[0,2.7,.4],[0,3.15,.4]],['U3',[2,2.7,.4],[2,3.15,.4]],
-  ['U',[.3,2.55,.5],[.3,3.35,.5]],['C',[-.7,2.7,.6],[-1.2,3,.65]],['C2',[.7,2.7,.6],[1.2,3,.65]],
-  ['H3',[0,-.4,1.3],[0,-.4,.8]],
-  ['Z1',[-2.3,-.5,1.6],[-2.3,-.5,1.0]],['Z2',[0,-.5,1.6],[0,-.5,1.0]],['Z3',[2.3,-.5,1.6],[2.3,-.5,1.0]],
-  ['X1',[-2.1,-1.6,.05],[-2.1,-1.1,.05]],['X2',[0,-1.6,.05],[0,-1.1,.05]],['X3',[2.1,-1.6,.05],[2.1,-1.1,.05]],
-  ['Y1',[-2,-1.15,-.5],[-2,-1.15,.05]],['Y2',[0,-1.15,-.5],[0,-1.15,.05]],['Y3',[2,-1.15,-.5],[2,-1.15,.05]]
- ];
- for(const [id,a,b] of axisArrows)arrow(a,b,id);
- ctx.font='bold 13px system-ui';ctx.fillStyle='#d5e6f1';ctx.fillText('BDC3200 · 3D КОНЦЕПТ',14,25);ctx.font='11px system-ui';ctx.fillStyle='#93a9ba';ctx.fillText('16 осей · не заводская CAD-геометрия',14,44);
- ctx.fillStyle='#8ca6b9';ctx.font='11px system-ui';ctx.fillText('ЛКМ: вращать · колесо: масштаб',14,h-13);
+ if(Math.cos(machineYaw)>-.1&&Math.cos(machineYaw)<1.1){
+  stamp('SENFENG',[-2.68,-.852,2.08],'#24526a','bold 12px system-ui');
+  stamp('SENFENG',[2.79,-1.72,-.51],'#f3f7fa','bold 11px system-ui');
+ }
+ if($('machineShowAxes')?.checked){
+  const arrows=[
+   ['D',[-1.2,-2.17,.04],[-1.2,-1.7,.04]],['D2',[.0,-2.17,.04],[0,-1.7,.04]],['U3',[1.1,-2.17,.04],[1.1,-1.7,.04]],
+   ['U',[.65,-2.48,.03],[.65,-1.95,.03]],['C',[1.25,-2.0,.23],[1.64,-1.83,.23]],['C2',[2.24,-2.0,.23],[1.84,-1.83,.23]],
+   ['H3',[1.8,-1.63,1.45],[1.8,-1.63,1.05]],
+   ['Z1',[-2.3,-1.12,1.19],[-2.3,-1.12,.69]],['Z2',[0,-1.12,1.19],[0,-1.12,.69]],['Z3',[2.3,-1.12,1.19],[2.3,-1.12,.69]],
+   ['X1',[-2.35,-1.68,.2],[-2.35,-1.2,.2]],['X2',[0,-1.68,.2],[0,-1.2,.2]],['X3',[2.35,-1.68,.2],[2.35,-1.2,.2]],
+   ['Y1',[-2.3,-1.33,-.48],[-2.3,-1.33,.0]],['Y2',[0,-1.33,-.48],[0,-1.33,.0]],['Y3',[2.3,-1.33,-.48],[2.3,-1.33,.0]]
+  ];
+  for(const [id,p,q] of arrows){
+   const a=project(p),b=project(q),active=activeAxes.has(id),color=active?'#ffad67':'#e6bf63';
+   ctx.strokeStyle=color;ctx.fillStyle=color;ctx.lineWidth=active?2.8:1.5;ctx.beginPath();ctx.moveTo(a[0],a[1]);ctx.lineTo(b[0],b[1]);ctx.stroke();
+   const angle=Math.atan2(b[1]-a[1],b[0]-a[0]);ctx.beginPath();ctx.moveTo(b[0],b[1]);ctx.lineTo(b[0]-8*Math.cos(angle-.36),b[1]-8*Math.sin(angle-.36));ctx.lineTo(b[0]-8*Math.cos(angle+.36),b[1]-8*Math.sin(angle+.36));ctx.closePath();ctx.fill();
+   ctx.font='bold 11px system-ui';ctx.fillStyle='#0d1b29e8';const tw=ctx.measureText(id).width;ctx.fillRect(b[0]+3,b[1]-13,tw+8,17);ctx.fillStyle=color;ctx.fillText(id,b[0]+7,b[1]);
+  }
+ }
+ ctx.font='bold 13px system-ui';ctx.fillStyle='#e8f2f8';ctx.fillText('SENFENG BDC3200 · МОДЕЛЬ ПО КАТАЛОГУ',14,24);
+ ctx.font='11px system-ui';ctx.fillStyle='#a9bdca';ctx.fillText('Форма корпуса — по фото · внутренняя кинематика — схема',14,42);
+ ctx.fillStyle='#94aabd';ctx.font='11px system-ui';ctx.fillText('Вращать: ЛКМ · масштаб: колесо · показать оси: переключатель',14,h-13);
  $('machineTimeline').max=cycleCount();$('machineTimeline').value=progress;
  $('machinePlay').textContent=playing?'Ⅱ Пауза':'▶ Пуск';
 }
+
 function read(){
  const m={...model};for(const k of Object.keys(ranges))m[k]=inputNumber(k);for(const k of ['maxWidth','maxHeight'])m[k]=inputNumber(k);for(const k of ['material','runMode','avoidance'])m[k]=$(k).value;
  editSides=editSides.map((side,i)=>side.map((_,j)=>({h:inputNumber(`fh_${i}_${j}`),a:inputNumber(`fa_${i}_${j}`),sign:inputNumber(`fs_${i}_${j}`)})));m.sides=editSides;
@@ -834,6 +886,7 @@ $('view').addEventListener('wheel',e=>{e.preventDefault();const unit=e.deltaMode
 $('zoomIn').onclick=()=>{zoomView(zoom*1.2);};$('zoomOut').onclick=()=>{zoomView(zoom/1.2);};$('showMachine').onchange=()=>{dirty=true;};$('showFrame').onchange=()=>{dirty=true;};
 const sizeObserver=new ResizeObserver(()=>{dirty=true;drawFlat();drawMachineSchema();});for(const id of ['view','cross','contactView','flat','machineView'])sizeObserver.observe($(id));
 
+$('machineShowAxes').onchange=()=>drawMachineSchema();
 $('machineView').addEventListener('pointerdown',e=>{e.preventDefault();$('machineView').setPointerCapture(e.pointerId);machineDrag={x:e.clientX,y:e.clientY};});
 $('machineView').addEventListener('pointermove',e=>{if(!machineDrag)return;machineYaw+=(e.clientX-machineDrag.x)*.008;machinePitch=Math.max(-1.32,Math.min(1.4,machinePitch-(e.clientY-machineDrag.y)*.008));machineDrag={x:e.clientX,y:e.clientY};drawMachineSchema();});
 for(const name of ['pointerup','pointercancel','lostpointercapture'])$('machineView').addEventListener(name,()=>{machineDrag=null;});
